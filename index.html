@@ -1,1 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Q Verse Solutions — Creative Marketing & Tech</title>
+  <meta name="description" content="Q Verse Solutions is a full-stack creative marketing firm — branding, websites, custom software, and performance marketing." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+  <div id="qv-site">
+    <!-- NAV -->
+    <div class="nav">
+      <div class="container nav-inner">
+        <div class="brand">
+          <img class="logo-img" src="assets/img/qverse-logo.png" alt="Q Verse Solutions logo" height="40" />
+          <span>
+            <span class="name">Q VERSE</span>
+            <span class="sub">SOLUTIONS</span>
+          </span>
+        </div>
+        <nav style="display:flex; gap:18px; font-weight:700">
+          <a href="#intro">Intro</a>
+          <a href="#about">About</a>
+          <a href="#services">Services</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </div>
+    </div>
+
+    <!-- HERO / INTRO -->
+    <header id="intro" class="hero">
+      <div class="container">
+        <h1><span class="gradient-text">Edgy, effective</span> marketing for bold brands.</h1>
+        <p>Q Verse Solutions combines award-level design with performance engineering. We craft identities, launch high-converting sites, and ship custom software that scales.</p>
+        <a class="cta" href="#contact">Start a Project <small>↗</small></a>
+      </div>
+    </header>
+
+    <!-- ABOUT US -->
+    <section id="about" class="about">
+      <div class="container about-grid">
+        <div>
+          <h2>About Us</h2>
+          <p class="lead">We're a senior team of designers, strategists, and engineers. From quick sprints to full-stack launches, we partner with businesses and creators to build brands that punch above their weight.</p>
+          <div style="margin-top:10px">
+            <span class="chip">⚡ Rapid delivery</span>
+            <span class="chip">🛠️ Custom software</span>
+            <span class="chip">📈 Growth focused</span>
+          </div>
+        </div>
+        <div class="card">
+          <div class="mono">/stack</div>
+          <h3>Design + Build</h3>
+          <p>Strategy → Identity → UX/UI → Web → Apps. Integrated, iterative, measurable.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services">
+      <div class="container">
+        <h2>Services</h2>
+        <p class="lead">Logo & Branding, Marketing, Website & Software — selectively tailored, never templated.</p>
+        <div class="grid">
+          <article class="card">
+            <div class="mono">01</div>
+            <h3>Logo & Branding</h3>
+            <p>Distinctive identities, rules, and launch kits that scale across every touchpoint.</p>
+          </article>
+          <article class="card">
+            <div class="mono">02</div>
+            <h3>Marketing</h3>
+            <p>Performance creative, content systems, and campaigns engineered for growth.</p>
+          </article>
+          <article class="card">
+            <div class="mono">03</div>
+            <h3>Website & Software</h3>
+            <p>Lightning-fast sites and custom tools that automate work and convert traffic.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="about">
+      <div class="container">
+        <h2>Contact</h2>
+        <p class="lead">We reply within <strong>24 hours</strong> of your submission.</p>
+        <form id="contactForm">
+          <div>
+            <label for="first">First Name</label>
+            <input id="first" name="first" placeholder="First Name" required>
+          </div>
+          <div>
+            <label for="last">Last Name</label>
+            <input id="last" name="last" placeholder="Last Name" required>
+          </div>
+          <div class="full">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" placeholder="you@example.com" required>
+          </div>
+          <div class="full">
+            <label for="subject">Subject</label>
+            <input id="subject" name="subject" placeholder="Project inquiry" required>
+          </div>
+          <div class="full">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" placeholder="Tell us about your goals…" required></textarea>
+          </div>
+          <button class="submit" type="submit">Send Message</button>
+        </form>
+        <p class="note">This demo opens your email app to send the message. For production delivery, connect Formspree, Netlify Forms, or a serverless function.</p>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container">© <span id="year"></span> Q Verse Solutions · All rights reserved</div>
+    </footer>
+  </div>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
 

@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Q Verse Solutions LLC — Creative Marketing & Tech</title>
-  <meta name="description" content="Q Verse Solutions is a full‑stack creative marketing firm — branding, websites, custom software, and performance marketing." />
+  <meta name="description" content="Q Verse Solutions is a full-stack creative marketing firm — branding, websites, custom software, and performance marketing." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
@@ -31,7 +31,7 @@
 
     /* --- NAV --- */
     .nav{position:sticky; top:0; z-index:50; backdrop-filter:saturate(160%) blur(10px); background:linear-gradient(180deg, rgba(11,13,18,.85), rgba(11,13,18,.65)); border-bottom:1px solid rgba(255,255,255,.06)}
-    .nav-inner{display:flex; align-items:center; justify-content:space-between; gap:16px; height:70px}
+    .nav-inner{display:flex; align-items:center; justify-content:space-between; gap:16px; height:70px; position:relative}
     .brand{display:flex; align-items:center; gap:12px; font-weight:800; letter-spacing:.4px}
     .qmark{width:40px; height:40px; border-radius:50%; background:
       radial-gradient(circle at 38% 32%, #86d1ff 0 18%, transparent 18%),
@@ -83,6 +83,70 @@
     /* --- FOOTER --- */
     footer{border-top:1px solid rgba(255,255,255,.08); padding:28px 0; color:var(--muted); text-align:center}
 
+    /* --- MOBILE NAV --- */
+    .hamburger {
+      display:none;
+      flex-direction:column;
+      justify-content:center;
+      gap:5px;
+      width:36px;
+      height:30px;
+      background:none;
+      border:none;
+      cursor:pointer;
+    }
+    .hamburger:focus-visible{outline:2px solid var(--brand); outline-offset:2px; border-radius:8px}
+    .hamburger span {
+      height:3px;
+      width:100%;
+      background:var(--ink);
+      border-radius:2px;
+      transition:.3s;
+    }
+
+    .nav-links{display:flex; gap:18px; font-weight:700}
+
+    /* Hide nav links by default on small screens */
+    @media (max-width: 720px){
+      .hamburger{display:flex;}
+      .nav-links{
+        position:absolute;
+        top:70px;
+        right:0;
+        background:var(--panel);
+        border-left:1px solid rgba(255,255,255,.08);
+        border-bottom:1px solid rgba(255,255,255,.08);
+        border-radius:0 0 0 var(--radius);
+        box-shadow:var(--shadow);
+        display:none;
+        flex-direction:column;
+        width:220px;
+        padding:14px 0;
+      }
+      .nav-links a{
+        padding:12px 20px;
+        color:var(--ink);
+        text-align:left;
+      }
+      .nav-links a:hover{
+        background:rgba(255,255,255,.04);
+      }
+      .nav-links.open{
+        display:flex;
+      }
+
+      /* Animate the hamburger icon into an "X" when open */
+      .hamburger.active span:nth-child(1){
+        transform:translateY(8px) rotate(45deg);
+      }
+      .hamburger.active span:nth-child(2){
+        opacity:0;
+      }
+      .hamburger.active span:nth-child(3){
+        transform:translateY(-8px) rotate(-45deg);
+      }
+    }
+
     /* --- RESPONSIVE --- */
     @media (max-width: 920px){
       .hero h1{font-size:42px}
@@ -93,9 +157,9 @@
   </style>
 </head>
 <body>
- 
+
   <!-- NAV -->
-<div class="nav">
+  <div class="nav">
     <div class="container nav-inner">
       <div class="brand">
         <div class="qmark"></div>
@@ -104,14 +168,21 @@
           <span class="sub">SOLUTIONS LLC</span>
         </span>
       </div>
-      <nav style="display:flex; gap:18px; font-weight:700">
+
+      <!-- Hamburger button -->
+      <button class="hamburger" aria-label="Toggle navigation" aria-controls="site-nav" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+      <!-- Nav links -->
+      <nav id="site-nav" class="nav-links">
         <a href="#intro">Intro</a>
         <a href="#about">About</a>
         <a href="#services">Services</a>
         <a href="#contact">Contact</a>
       </nav>
+    </div>
   </div>
-</div>
 
   <!-- HERO / INTRO -->
   <header id="intro" class="hero">
@@ -127,7 +198,7 @@
     <div class="container about-grid">
       <div>
         <h2>About Us</h2>
-        <p class="lead">We're a senior team of designers, strategists, and engineers. From quick sprints to full‑stack launches, we partner with businesses and creators to build brands that punch above their weight.</p>
+        <p class="lead">We're a senior team of designers, strategists, and engineers. From quick sprints to full-stack launches, we partner with businesses and creators to build brands that punch above their weight.</p>
         <div style="margin-top:10px">
           <span class="chip">⚡ Rapid delivery</span>
           <span class="chip">🛠️ Custom software</span>
@@ -161,7 +232,7 @@
         <article class="card">
           <div class="mono">03</div>
           <h3>Website & Software</h3>
-          <p>Lightning‑fast sites and custom tools that automate work and convert traffic.</p>
+          <p>Lightning-fast sites and custom tools that automate work and convert traffic.</p>
         </article>
       </div>
     </div>
@@ -173,35 +244,35 @@
       <h2>Contact</h2>
       <p class="lead">We reply within <strong>24 hours</strong> of your submission.</p>
       <form action="https://formspree.io/f/xpwybdwk" method="POST">
-  <div>
-    <label for="first">First Name</label>
-    <input id="first" name="first_name" placeholder="First Name" required>
-  </div>
-  <div>
-    <label for="last">Last Name</label>
-    <input id="last" name="last_name" placeholder="Last Name" required>
-  </div>
-  <div class="full">
-    <label for="email">Email</label>
-    <input id="email" type="email" name="email" placeholder="you@example.com" required>
-  </div>
-  <div class="full">
-    <label for="subject">Subject</label>
-    <input id="subject" name="subject" placeholder="Project inquiry" required>
-  </div>
-  <div class="full">
-    <label for="message">Message</label>
-    <textarea id="message" name="message" placeholder="Tell us about your goals…" required></textarea>
-  </div>
+        <div>
+          <label for="first">First Name</label>
+          <input id="first" name="first_name" placeholder="First Name" required>
+        </div>
+        <div>
+          <label for="last">Last Name</label>
+          <input id="last" name="last_name" placeholder="Last Name" required>
+        </div>
+        <div class="full">
+          <label for="email">Email</label>
+          <input id="email" type="email" name="email" placeholder="you@example.com" required>
+        </div>
+        <div class="full">
+          <label for="subject">Subject</label>
+          <input id="subject" name="subject" placeholder="Project inquiry" required>
+        </div>
+        <div class="full">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" placeholder="Tell us about your goals…" required></textarea>
+        </div>
 
-  <!-- Optional extras -->
-  <!-- Honeypot to reduce spam -->
-  <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
-  <!-- Redirect to a thank-you page you host -->
-  <!-- <input type="hidden" name="_redirect" value="https://qversesolutions.com/thanks.html"> -->
+        <!-- Optional extras -->
+        <!-- Honeypot to reduce spam -->
+        <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+        <!-- Redirect to a thank-you page you host -->
+        <!-- <input type="hidden" name="_redirect" value="https://qversesolutions.com/thanks.html"> -->
 
-  <button class="submit" type="submit">Send Message</button>
-</form>
+        <button class="submit" type="submit">Send Message</button>
+      </form>
     </div>
   </section>
 
@@ -211,8 +282,45 @@
 
   <script>
     // Smooth scroll
-    document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener('click',e=>{const id=a.getAttribute('href').slice(1);const el=document.getElementById(id);if(el){e.preventDefault();el.scrollIntoView({behavior:'smooth'});}}));
+    document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener('click',e=>{
+      const id=a.getAttribute('href').slice(1);
+      const el=document.getElementById(id);
+      if(el){e.preventDefault();el.scrollIntoView({behavior:'smooth'});}
+    }));
     document.getElementById('year').textContent=new Date().getFullYear();
+
+    // Mobile nav toggle
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.getElementById('site-nav');
+
+    function toggleNav() {
+      const open = hamburger.classList.toggle('active');
+      navLinks.classList.toggle('open', open);
+      hamburger.setAttribute('aria-expanded', open ? 'true' : 'false');
+    }
+
+    hamburger.addEventListener('click', toggleNav);
+
+    // Close menu when a link is clicked (on mobile)
+    document.querySelectorAll('#site-nav a').forEach(link => {
+      link.addEventListener('click', () => {
+        if (hamburger.classList.contains('active')) {
+          hamburger.classList.remove('active');
+          navLinks.classList.remove('open');
+          hamburger.setAttribute('aria-expanded', 'false');
+        }
+      });
+    });
+
+    // Close on Escape
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && hamburger.classList.contains('active')) {
+        hamburger.classList.remove('active');
+        navLinks.classList.remove('open');
+        hamburger.setAttribute('aria-expanded', 'false');
+        hamburger.focus();
+      }
+    });
   </script>
 </body>
 </html>
